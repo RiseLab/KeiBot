@@ -26,4 +26,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+	/*
+	 * Получить ботов пользователя
+	 */
+	public function bots()
+	{
+		return $this->hasMany('App\Bot');
+	}
 }
