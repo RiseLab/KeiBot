@@ -53,21 +53,6 @@ $(function(){
 		$(this).animate({opacity: 1}, 2000);
 	});
 
-	$('.cam-rotate-horizontal input').slider({
-		tooltip_position: 'top',
-		formatter: function(value) {
-			return value + '°';
-		}
-	});
-
-	$('.cam-rotate-vertical input').slider({
-		tooltip_position: 'left',
-		reversed: true,
-		formatter: function(value) {
-			return value + '°';
-		}
-	});
-
 	// Выбор бота из списка
 	$('.bot-selector').change(function () {
 		var action = $(this).val();
@@ -126,4 +111,32 @@ $(function(){
 			$('.bot-action-btn[data-code=' + e.which + ']').trigger('mouseup');
 		}
 	});
+
+	// Cam rotate controls
+	var sliderHorizontal = $('.cam-rotate-horizontal input').slider({
+		tooltip_position: 'top',
+		reversed: true,
+		formatter: function(value) {
+			return value + '°';
+		}
+	});
+	sliderHorizontal.on('slideStop', function(e){
+		var command = '\'' + 'crh on ' + e.value + '°\' #' + ++actionId;
+		logger(command + ' command sended', 'chevron-circle-right', 'primary');
+		sender($(this).data('url'), 'crh' + e.value, $(this).data('password'), command + ' action executed');
+	});
+
+	var sliderVertical = $('.cam-rotate-vertical input').slider({
+		tooltip_position: 'left',
+		reversed: false,
+		formatter: function(value) {
+			return value + '°';
+		}
+	});
+	sliderVertical.on('slideStop', function(e){
+		var command = '\'' + 'crv on ' + e.value + '°\' #' + ++actionId;
+		logger(command + ' command sended', 'chevron-circle-right', 'primary');
+		sender($(this).data('url'), 'crv' + e.value, $(this).data('password'), command + ' action executed');
+	});
+
 });

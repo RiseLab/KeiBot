@@ -57,8 +57,8 @@
                     <div class="bot-controls{{ !count($bots) ? ' hidden' : '' }}">
                         <div class="row p-b-20">
                             <div class="col-xs-12">
-                                <object class="cam-preload" data="{{ isset($activeBot['url']) ? 'http://' . Auth::user()->name . ':' . $activeBot['password'] . '@' . $activeBot['url'] . ':8080/?action=snapshot' : '' }}" type="image/jpg"></object>
-                                <div class="cam-view">
+                                <object class="cam-preload" data="{{ isset($activeBot['url']) ? 'http://' . $activeBot['url'] . ':8080/?action=snapshot' : '' }}" type="image/jpg"></object>
+                                <div class="cam-view" data-username="{{  Auth::user()->name }}" data-password="{{ $activeBot['password'] }}">
                                     <div class="bot-console">
                                         <div class="bot-console-string">
                                             <i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -71,12 +71,12 @@
                                         <div class="bot-console-string">&nbsp;</div>
                                     </div>
                                     <img class="img-responsive cam-default" src="img/cam-default-03.jpg" alt="" />
-                                    <object class="img-responsive cam-stream" data="{{ isset($activeBot['url']) ? 'http://' . Auth::user()->name . ':' . $activeBot['password'] . '@' . $activeBot['url'] . ':8080/?action=stream' : '' }}" type="image/jpg"></object>
+                                    <object class="img-responsive cam-stream" data="{{ isset($activeBot['url']) ? 'http://' . $activeBot['url'] . ':8080/?action=stream' : '' }}" type="image/jpg"></object>
                                     <div class="cam-rotate-horizontal">
-                                        <input type="text" data-slider-min="-90" data-slider-max="90" data-slider-step="1" data-slider-value="0" />
+                                        <input type="text" data-slider-min="0" data-slider-max="180" data-slider-step="1" data-slider-value="90" data-password="gR@Yr0$e" data-url="{{ isset($activeBot['url']) ? $activeBot['url'] : '' }}" />
                                     </div>
                                     <div class="cam-rotate-vertical">
-                                        <input type="text" data-slider-min="-90" data-slider-max="90" data-slider-step="1" data-slider-value="0" data-slider-orientation="vertical" />
+                                        <input type="text" data-slider-min="0" data-slider-max="180" data-slider-step="1" data-slider-value="90" data-slider-orientation="vertical" data-password="gR@Yr0$e" data-url="{{ isset($activeBot['url']) ? $activeBot['url'] : '' }}" />
                                     </div>
                                 </div>
                             </div>
