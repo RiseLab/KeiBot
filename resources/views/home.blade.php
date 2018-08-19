@@ -95,7 +95,7 @@
                         <div class="row">
                             <div class="col-xs-2">
                                 <div class="btn-group-justified">
-                                    <a class="btn btn-default bot-action-btn" data-code="65" data-action="ml" data-name="turn left" data-password="gR@Yr0$e" data-url="{{ isset($activeBot['url']) ? $activeBot['url'] : '' }}" data-id="">
+                                    <a class="btn btn-default bot-action-btn" data-code="65" data-action="tl" data-name="turn left" data-password="gR@Yr0$e" data-url="{{ isset($activeBot['url']) ? $activeBot['url'] : '' }}" data-id="">
                                         <i class="fa fa-rotate-left" aria-hidden="true"></i>
                                     </a>
                                 </div>
@@ -109,7 +109,7 @@
                             </div>
                             <div class="col-xs-2">
                                 <div class="btn-group-justified">
-                                    <a class="btn btn-default bot-action-btn" data-code="68" data-action="mr" data-name="turn right" data-password="gR@Yr0$e" data-url="{{ isset($activeBot['url']) ? $activeBot['url'] : '' }}" data-id="">
+                                    <a class="btn btn-default bot-action-btn" data-code="68" data-action="tr" data-name="turn right" data-password="gR@Yr0$e" data-url="{{ isset($activeBot['url']) ? $activeBot['url'] : '' }}" data-id="">
                                         <i class="fa fa-rotate-right" aria-hidden="true"></i>
                                     </a>
                                 </div>
