@@ -13,7 +13,7 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
+                background: radial-gradient(#fff 3%, transparent, #fff 90%);
                 color: #636b6f;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
@@ -62,9 +62,17 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            #welcome_canvas {
+                left: 0;
+                position: absolute;
+                top: 0;
+                z-index: -1;
+            }
         </style>
     </head>
     <body>
+        <canvas id="welcome_canvas" class="position-absolute"></canvas>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -87,5 +95,6 @@
                 </div>
             </div>
         </div>
+        <script src="/js/welcome.transition.js"></script>
     </body>
 </html>
